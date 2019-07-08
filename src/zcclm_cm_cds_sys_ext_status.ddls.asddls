@@ -13,7 +13,7 @@ inner join e2e_active_wli as awli
     sys.system_role as SystemRole,
     key awli.name as ExtractorName,
     e2e.wli_id as ExtractorId,
-    case when e2e.rc = 0 and e2e.t_start_last = e2e.t_start_last_suc then 0
+    case when e2e.rc = 0 then 0
          else 2
     end
     as ExtractorStatus,
@@ -44,7 +44,7 @@ left outer join e2e_efwk_status as e2e
     sys.system_role as SystemRole,
     srte.extractor_name as ExtractorName,
     e2e.wli_id as ExtractorId,
-    case when e2e.rc = 0 and e2e.t_start_last = e2e.t_start_last_suc then 0
+    case when e2e.rc = 0 then 0
          else 2
     end
     as ExtractorStatus,
@@ -76,7 +76,7 @@ left outer join zagsccl_srte as srte
     sys.system_role as SystemRole,
     awli.name as ExtractorName,
     e2e.wli_id as ExtractorId,
-    case when e2e.rc = 0 and e2e.t_start_last = e2e.t_start_last_suc then 0
+    case when e2e.rc = 0 then 0
          else 2
     end
     as ExtractorStatus,
