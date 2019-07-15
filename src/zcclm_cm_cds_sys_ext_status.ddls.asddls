@@ -8,7 +8,7 @@ inner join zagsccl_srte as srte
 inner join e2e_efwk_status as e2e
     on e2e.extractor = srte.extractor_name and e2e.sid = sys.system_id 
 inner join e2e_active_wli as awli
-    on e2e.wli_id = awli.wli_id {
+    on e2e.wli_id = awli.wli_id  {
     key sys.system_id as SystemId,
     sys.system_role as SystemRole,
     key awli.name as ExtractorName,
