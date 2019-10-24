@@ -18,4 +18,4 @@ inner join e2e_efwk_log as log
     log.message as message,
     log.runtime as runtime,
     log.records as records
-} where ( active.setup_type = 'CCM' or ( active.setup_type = 'E2EREP' and active.extractorclass = 'E2E_LUW_ECL_0CCMSATPH'  ) ) and active.active = 'X'
+} where ( active.setup_type = 'CCM' or active.setup_type = 'ICIDB' or ( active.setup_type = 'E2EREP' and active.extractorclass = 'E2E_LUW_SECONDAR_EXTRACTOR_SSR'  ) ) and active.active = 'X'

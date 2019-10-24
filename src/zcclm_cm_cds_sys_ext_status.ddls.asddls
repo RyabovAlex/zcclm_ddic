@@ -26,9 +26,9 @@ inner join e2e_active_wli as awli
     e2e.t_stop_last_suc as LastSucStop,
     0 as BestPractice
 } where awli.active = 'X' and 
-    (awli.setup_type = 'CCM' or 
+    (awli.setup_type = 'CCM' or awli.setup_type = 'ICIDB' or  
         ( awli.setup_type = 'E2EREP' and 
-            awli.extractorclass = 'E2E_LUW_ECL_0CCMSATPH'  ) )
+            awli.extractorclass = 'E2E_LUW_SECONDAR_EXTRACTOR_SSR'  ) )
 
 union
 
@@ -89,4 +89,4 @@ left outer join zagsccl_srte as srte
     e2e.t_stop_last_suc as LastSucStop,
     1 as BestPractice
 } where srte.extractor_name is null and awli.active = 'X' and 
-    (awli.setup_type = 'CCM' )
+    (awli.setup_type = 'CCM' or awli.setup_type = 'ICIDB' )
